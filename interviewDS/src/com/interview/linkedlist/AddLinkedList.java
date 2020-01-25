@@ -5,9 +5,9 @@ import com.interview.linkedlist.LinkedList.Node;
 /**
  * Given two LinkedList, add each node value. 
  * Example: 
- *          L1 -> 1 1 0 1 
- *          L2 ->   1 0 0
- * Output list -> 1 2 0 1
+ *          L1 -> 1 1 0 9 
+ *          L2 ->   1 2 6
+ * Output list -> 1 2 3 5
  * 
  * @author Utpal.Kant
  *
