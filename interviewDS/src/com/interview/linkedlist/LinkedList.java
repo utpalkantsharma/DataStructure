@@ -19,7 +19,14 @@ public class LinkedList {
 		{ 
 			data = d; 
 			next = null; 
-		} 
+		}
+
+		@Override
+		public String toString() {
+			return "Node [data=" + data + "]";
+		}
+		
+		
 	} 
 
 	// **************INSERTION************** 
