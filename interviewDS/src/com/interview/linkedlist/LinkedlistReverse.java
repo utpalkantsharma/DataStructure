@@ -1,7 +1,11 @@
 package com.interview.linkedlist;
 
 import com.interview.linkedlist.LinkedList.Node;
-
+/**
+ * Different ways to reverse linked list.
+ * @author Utpal.Kant
+ *
+ */
 public class LinkedlistReverse {
 
 	/**
@@ -18,6 +22,23 @@ public class LinkedlistReverse {
 		if(head == null) return;
 		recursive(head.next,reverse);
 		LinkedList.insert(reverse, head.data);
+	}
+	
+	/**
+	 * 1->2->3->4->null
+	 * @param head
+	 * @return
+	 */
+	public Node reverse(Node head) {
+		if(head == null || head.next == null) {
+			return head;
+		}
+		
+		Node reverseHead = reverse(head.next);
+		head.next.next = head;
+		head.next = null;
+		
+		return reverseHead;
 	}
 
 	public static void main(String[] args) {
@@ -41,6 +62,15 @@ public class LinkedlistReverse {
 		reverse.recursive(list.head, rev);
 		
 		LinkedList.printList(rev);
+		
+		System.out.print("Original list before recursion : ");
+		LinkedList.printList(list);
+		Node head = reverse.reverse(list.head);
+		
+		while(head!=null) {
+			System.out.print(head.data+" ");
+			head = head.next;
+		}
 
 	}
 
