@@ -1,6 +1,9 @@
 package com.interview.hacker_rank.string;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,7 +19,10 @@ import java.util.Map;
 public class SherlockAndTheValidString {
 
 	public static void main(String[] args) {
+		System.out.println(isValid("a"));
+		System.out.println(isValid("aaaabccccdddd"));
 		System.out.println(isValid("aabbccddeefghi"));
+		System.out.println(isValid("aaabbccddee"));
 	}
 
 	// Complete the isValid function below.
@@ -30,21 +36,31 @@ public class SherlockAndTheValidString {
 				frequency.compute(c, (k, v) -> ++v);
 			}
 		}
-		frequency.entrySet().stream().forEach((entry) -> System.out.println(entry.getKey() + "->" + entry.getValue()));
-		int count = 0;
-		int allowedRemoval = 0;
-		for (Map.Entry<Character, Integer> e : frequency.entrySet()) {
-			if (count == 0) {
-				count = e.getValue();
-				continue;
-			}
-			if (e.getValue() == count + 1 || e.getValue() + 1 == count) {
-				allowedRemoval++;
-			} else if (e.getValue() - count > 1 || count - e.getValue() > 1) {
+		frequency.entrySet().stream().forEach((entry) -> System.out.print(entry.getKey() + "->" + entry.getValue()));
+		List<Integer> list = new ArrayList<>(frequency.values());
+		Collections.sort(list);
+		int min = list.get(0);
+		int max = list.get(list.size() - 1);
+		System.out.println("min " + min + ", max " + max);
+		if (min == max) {
+			return "YES";
+		}
+		int minMatch = 0;
+		int maxMatch = 0;
+		for (int i : list) {
+			if (i == min) {
+				minMatch++;
+			} else if (i == max) {
+				maxMatch++;
+			} else {
 				return "NO";
 			}
 		}
-		return (allowedRemoval == 1 || allowedRemoval == 0) ? "YES" : "NO";
+		if ((maxMatch == 1 && max - min == 1) || (minMatch == 1 && min == 1)) {
+			return "YES";
+		}
+
+		return "NO";
 	}
 
 }
