@@ -37,8 +37,8 @@ public class CommonChild {
 		String s1 = "WEWOUCUIDGCGTRMEZEPXZFEJWISRSBBSYXAYDFEJJDLEBVHHKS";
 		String s2 = "FDAGCXGKCTKWNECHMRXZWMLRYUCOCZHJRRJBOAJOQJZZVUYXIC";
 		//Expected output 15
-		//System.out.println(lcsDynamic(s1.toCharArray(),s2.toCharArray()));
-		System.out.println(lcsRecursive(s1.toCharArray(),s2.toCharArray(),s1.length(),s2.length()));
+		System.out.println(lcsDynamic(s1.toCharArray(),s2.toCharArray()));
+		//System.out.println(lcsRecursive(s1.toCharArray(),s2.toCharArray(),s1.length(),s2.length()));
 
 	}
 
