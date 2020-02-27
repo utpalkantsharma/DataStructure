@@ -1,7 +1,5 @@
 package com.interview.hacker_rank.string;
 
-import java.util.Arrays;
-
 /**
  * A string is said to be a child of a another string if it can be formed by
  * deleting 0 or more characters from the other string. Given two strings of
