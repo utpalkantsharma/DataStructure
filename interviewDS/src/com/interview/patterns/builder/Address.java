@@ -5,7 +5,7 @@ public class Address {
 	public String city;
 	public String state;
 	public String zip;
-	
+	public static final Builder builder = new Builder();
 	public Address(Builder addressBuilder) {
 		this.city = addressBuilder.city;
 		this.state = addressBuilder.state;

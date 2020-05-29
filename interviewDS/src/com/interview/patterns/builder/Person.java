@@ -4,6 +4,7 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private Address address;
+	public static final Builder builder = new Builder();
 
 	public Person(Builder builder) {
 		this.firstName = builder.firstName;
