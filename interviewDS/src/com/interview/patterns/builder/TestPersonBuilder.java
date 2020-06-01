@@ -6,8 +6,8 @@ public class TestPersonBuilder {
 		Person person = Person.builder.setFirstName("Utpal").setLastName("Sharma")
 				.setAddress(Address.builder.setCity("Bangalore").setState("Bangalore").setZip("584003").build())
 				.setIds(IdListBuilder.newBuilder().withNewList()
-						.addId().setType("voter id").setUniqueNumber("123v34555").addWheelToList()
-						.addId().setType("pan card").setUniqueNumber("ce34343adfds").addWheelToList()
+						.addId().setType("voter id").setUniqueNumber("123v34555").addIdToList()
+						.addId().setType("pan card").setUniqueNumber("ce34343adfds").addIdToList()
 						.done())
 				.build();
 		System.out.println(person);

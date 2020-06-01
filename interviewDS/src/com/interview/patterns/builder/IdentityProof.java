@@ -16,7 +16,7 @@ public class IdentityProof {
 		private String uniqueNumber;
 		private IdListBuilder idListBuilder;
 
-		public IdListBuilder addWheelToList() {
+		public IdListBuilder addIdToList() {
 			this.idListBuilder.addId(this.build());
 			return this.idListBuilder;
 		}
