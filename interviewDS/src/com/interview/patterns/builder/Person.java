@@ -1,21 +1,33 @@
 package com.interview.patterns.builder;
 
+import java.util.List;
+
 public class Person {
 	private String firstName;
 	private String lastName;
 	private Address address;
+	private List<IdentityProof> ids;
 	public static final Builder builder = new Builder();
 
 	public Person(Builder builder) {
 		this.firstName = builder.firstName;
 		this.lastName = builder.lastName;
 		this.address = builder.address;
+		this.ids = builder.ids;
 	}
 
 	public static class Builder {
 		private String firstName;
 		private String lastName;
 		private Address address;
+		private List<IdentityProof> ids;
+		
+		public Builder setIds(List<IdentityProof> ids) {
+			this.ids = ids;
+			return this;
+		}
+		
+		
 
 		public Builder setFirstName(String firstName) {
 			this.firstName = firstName;
@@ -40,7 +52,8 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + "]";
+		return "Person [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", ids=" + ids
+				+ "]";
 	}
 
 }
